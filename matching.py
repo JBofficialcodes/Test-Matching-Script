@@ -16,7 +16,7 @@ def upload_grade(id_file, test_file):
 		try:
 			grade = grade_dict[key_to_look_for]
 			# set the grade
-			final.loc[final.SIS == key_to_look_for, 'T2 (4834345)'] = int(grade)
+			final.loc[final["SIS User ID"] == key_to_look_for, 'T2 (4834345)'] = int(grade)
 		except: 
 			pass
 	
@@ -31,7 +31,7 @@ def main():
 		upload_grade(sys.argv[1]+".csv", sys.argv[2]+".csv")
 	except: 
 		# else
-		upload_grade("people.csv", "test.csv")
+		upload_grade("Files/people.csv", "Files/test.csv")
 
 
 
